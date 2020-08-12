@@ -546,7 +546,6 @@ void DesktopDuplication::autoCaptureFn(int delay) {
             if (exTime.count() < delay - 1) {
                 auto waitTime = std::chrono::milliseconds{ delay - 1 } - exTime;
                 std::this_thread::sleep_for(waitTime); // wait the rest of the delay until the next screen capture
-				Sleep(1);
             }
 
             continue;
@@ -579,8 +578,8 @@ void DesktopDuplication::autoCaptureFn(int delay) {
         if (exTime.count() < delay - 1) {
             auto waitTime = std::chrono::milliseconds{ delay - 2 } - exTime; // subtract 2ms to account for the signal waiting
             std::this_thread::sleep_for(waitTime); // wait the rest of the delay until the next screen capture
-			Sleep(1);
 		}
+		Sleep(1);
     }
 }
 
